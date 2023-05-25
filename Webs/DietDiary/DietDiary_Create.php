@@ -15,7 +15,13 @@
     
     ?>
     <form action="">
-        <input type="text">
+        <label for="DietName"></label>
+        <input name="DietName" type="text">
+        <br/>
+        <label for=""></label>
+        <input name="PeopleCounts" type="number">
+        <br/>
+        <button ></button>
     </form>
 </body>
 </html>
