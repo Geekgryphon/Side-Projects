@@ -11,17 +11,35 @@
     
         if(isset($_POST)){
             
+
+            header("Location: .php");
         }
     
     ?>
     <form action="">
-        <label for="DietName"></label>
+        <label for="DietName">食譜名稱:</label>
         <input name="DietName" type="text">
         <br/>
-        <label for=""></label>
+        <label for="PeopleCounts">份數:</label>
         <input name="PeopleCounts" type="number">
         <br/>
-        <button ></button>
+        <label for="kcal">熱量:</label>
+        <input name="kcal" type="number">
+        <br/>
+        <label for="protein">蛋白:</label>
+        <input name="protein" type="number">
+        <br/>
+        <label for="carb">碳水:</label>
+        <input name="carb" type="number">
+        <br/>
+        <label for="fat">脂肪:</label>
+        <input name="fat" type="number">
+        <br/>
+        <span>JS選單-可增加材料，包含 重量 名稱</span>
+        <label for="StepMemo">料理方式:</label>
+        <textarea name="StepMemo"></textarea>
+        <br/>
+        <button>新增</button>
     </form>
 </body>
 </html>
