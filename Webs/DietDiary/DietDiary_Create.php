@@ -26,6 +26,12 @@
         <label for="kcal">熱量:</label>
         <input name="kcal" type="number">
         <br/>
+
+        <div id="" class="Ingredients">
+            <label for="kcal">熱量:</label>
+            <p>London is the capital city of England.</p>
+        </div>
+
         <label for="protein">蛋白:</label>
         <input name="protein" type="number">
         <br/>
