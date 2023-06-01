@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .tab button.active {
+            background-color: #ccc;
+        }
+    </style>
 </head>
 <body>
+
+    <div class="tab">
+        <button class="SportTablinks" onclick="openTab(event, 'Chest')">胸</button>
+        <button class="SportTablinks" onclick="openTab(event, 'Back')">背</button>
+        <button class="SportTablinks" onclick="openTab(event, 'Leg')">腿</button>
+        <button class="SportTablinks" onclick="openTab(event, 'Shoulder')">肩</button>
+        <button class="SportTablinks" onclick="openTab(event, 'Arm')">手</button>
+    </div>
+
     <div id="Chest" class="SportTabs">
         <h3>胸</h3>
         <div class="ChestVideo1">
@@ -32,5 +46,35 @@
     <div id="Arm" class="SportTabs">
         <h3>手</h3>
     </div>
+    <script>
+        document.getElementById("Chest").click();
+
+        SportTab = document.getElementsByClassName("SportTabs");
+
+        //先將所有版面隱藏
+        for (i = 0; i < SportTab.length; i++) {
+            SportTab[i].style.display = "none";
+        }
+
+        function openTab(evt, ShowTabName) {
+           // var SportTab, ShowTabName;
+            SportTab = document.getElementsByClassName("SportTabs");
+
+            //先將所有版面隱藏
+            for (i = 0; i < SportTab.length; i++) {
+                SportTab[i].style.display = "none";
+            }
+            
+            SportTablinks = document.getElementsByClassName("SportTablinks");
+            for (i = 0; i < ShowTabName.length; i++) {
+                SportTablinks[i].className = SportTablinks[i].className.replace(" active", "");
+            }
+
+            console.log(ShowTabName);
+            
+            document.getElementById(ShowTabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
