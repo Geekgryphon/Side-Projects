@@ -27,7 +27,7 @@
 
         <!-- 料理圖 -->
         <input type="file" multiple = "multiple">
-
+        <br/>
         <label for="PeopleCounts">份數:</label>
         <input name="PeopleCounts" type="number">
         <br/>
@@ -45,12 +45,15 @@
         <input name="kcal" type="number">
         <br/>
         <br/>
-
-        <label for="kcal">食材</label>
+        
+        <label for="Ingredient">食材</label>
+            <div id="Food_Box">
+                
+            </div>
         <br/>
-        <input name="kcal" type="text"  ><input name="kcal" type="text"><button>Delete</button>
+        <!-- <input name="kcal" type="text"  ><input name="kcal" type="text"><button>Delete</button> -->
         <br/>
-        <button>加入食材</button>
+        <span id="addIngredient">加入食材</span>
         <br/>
         <br/>
 
@@ -81,9 +84,58 @@
 
     </form>
     <script type="text/javascript">
-        function addIngredients() {
-            console.log("Test");
+
+        const addIngredient = document.querySelector("#addIngredient");
+
+        function DeleteFood(event) {
+            let clickedSpan = event.target;
+            let spanId = clickedSpan.id.substring(clickedSpan.id.length- 2);
+            console.log(spanId);
+            
+            let Deletebutton1 = document.querySelector('#Ingredient' + spanId);
+            Deletebutton1.parentElement.removeChild(Deletebutton1);
+
+            let Deletebutton2 = document.querySelector('#Unit' + spanId);
+            Deletebutton2.parentElement.removeChild(Deletebutton2);
+
+            let Deletebutton3 = document.querySelector('#DeleteFood' + spanId);
+            Deletebutton3.parentElement.removeChild(Deletebutton3);
+           
         }
+
+
+        addIngredient.addEventListener("click",(event) => {
+
+            let FoodCounts = document.querySelectorAll('[id^=Ingredient]').length;
+
+            let FoodNumber =  (FoodCounts + 1).toString().padStart(2,"0");
+
+            const Food_Box = document.querySelector("#Food_Box");
+
+            let Food = document.createElement("INPUT");
+            Food.setAttribute('type','text');
+            Food.setAttribute('id','Ingredient' + FoodNumber);
+
+            let Unit = document.createElement("INPUT");
+            Unit.setAttribute('type','text');
+            Unit.setAttribute('id','Unit' + FoodNumber);
+
+            let DeleteFood = document.createElement("span");
+            DeleteFood.setAttribute('id','DeleteFood' + FoodNumber);
+            DeleteFood.setAttribute('onclick','DeleteFood(event);');
+            DeleteFood.innerHTML = '刪除';
+
+            
+            
+
+
+            let br = document.createElement("br");
+
+            Food_Box.appendChild(Food);
+            Food_Box.appendChild(Unit);
+            Food_Box.appendChild(DeleteFood);
+            Food_Box.appendChild(br);
+        });
         
     </script>
 </body>
