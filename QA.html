@@ -6,23 +6,72 @@
     <title>Document</title>
 </head>
 <body>
-    <form method action="">
+    <form method="post" action="">
+
+        性別:
+        <select name="sex" id="">
+            <option value="m">男</option>
+            <option value="f">女</option>
+        </select>
+        <br/><br/><br/>
+
         <div class="Part1">
             <h2>第一部分:健康問卷</h2>
-            <input type="checkbox" name="Q1" onchange="fun1();">&nbsp;無
-            <input type="checkbox" name="Q2">&nbsp;疾病1
-            <input type="checkbox" name="Q3">&nbsp;疾病2
-            <br/>
-            <input type="checkbox" name="Q4">&nbsp;疾病3
-            <input type="checkbox" name="Q5">&nbsp;疾病4
-            <input type="checkbox" name="Q6">&nbsp;疾病5
-            <br/>
-            <input type="checkbox" name="Q7">&nbsp;疾病6
-            <input type="checkbox" name="Q8">&nbsp;疾病7
-            <input type="checkbox" name="Q9">&nbsp;疾病8
-            <br/>
-            <input type="checkbox">&nbsp;疾病9
-                <select name="" id="">
+            請勾選本人曾患過的疾病
+            <div>
+                <input type="checkbox" name="P1Q1" onchange="fun1();">&nbsp;1.無
+                <input type="checkbox" name="P1Q2">&nbsp;2.肺結核
+                <input type="checkbox" name="P1Q3">&nbsp;3.心臟病
+                <br/>
+                <input type="checkbox" name="P1Q4">&nbsp;4.肝炎
+                <input type="checkbox" name="P1Q5">&nbsp;5.氣喘
+                <input type="checkbox" name="P1Q6">&nbsp;6.腎臟病
+                <br/>
+                <input type="checkbox" name="P1Q7">&nbsp;7.癲癇
+                <input type="checkbox" name="P1Q8">&nbsp;8.紅斑性狼瘡
+                <input type="checkbox" name="P1Q9">&nbsp;9.血友病
+                <br/>
+                <input type="checkbox" name="P1Q10">&nbsp;10.蠶豆症
+                <input type="checkbox" name="P1Q11">&nbsp;11.關節炎
+                <input type="checkbox" name="P1Q12">&nbsp;12.糖尿病
+                <br/>
+                <input type="checkbox" name="P1Q13">&nbsp;13.心理或精神疾病<br/>
+                <input type="text" placeholder="疾病名稱"><br/>
+                <input type="checkbox" name="P1Q14">&nbsp;14.癌症<br/>
+                <input type="text" placeholder="癌症名稱"><br/>
+                <input type="checkbox" name="P1Q15">&nbsp;15.海洋性貧血
+                <div name="P1Q15group">
+                    <select name="P1Q15Select">
+                        <option value="0">請選擇等級</option>
+                        <option value="1">輕</option>
+                        <option value="2">中</option>
+                        <option value="3">重</option>
+                    </select>
+                </div>
+                <br/>
+                <input type="checkbox" name="P1Q16">&nbsp;16.重大手術名稱<br/>
+                <div name="P1Q16group">
+                    <input type="text" name="P1Q16Text" placeholder="重大手術名稱"><br/>
+                </div>
+                
+                <input type="checkbox" name="">&nbsp;17.過敏物質名稱<br/>
+                <div name="P1Q17group">
+                    <input type="text" placeholder="過敏物質名稱"><br/>
+                </div>
+                <input type="checkbox" name="">&nbsp;18.其他<br/>
+                <div name="P1Q18group">
+                    <input type="text" placeholder="請填寫"><br/>
+                </div>
+            </div>
+            
+
+            19.高度近視: 目前左右眼任一眼有沒有近視大於500度?
+            <input type="radio" name="P1Q19">無
+            <input type="radio" name="P1Q19">有
+            <input type="radio" name="P1Q19">不知道
+
+            <input type="checkbox">&nbsp;20.領有重大傷病證明卡
+                <select name="P1Q20">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -54,8 +103,9 @@
                     <option value="29">29</option>
                 </select>
             <br/>
-            <input type="checkbox">&nbsp;疾病10
-            <select name="" id="">
+
+            <input type="checkbox">&nbsp;21.領有身心障礙手冊<br/>
+            <select name="P1Q21Q1">
                 <option value="0">請選擇</option>
                 <option value="1">第一類</option>
                 <option value="2">第二類</option>
@@ -66,7 +116,7 @@
                 <option value="7">第七類</option>
                 <option value="8">第八類</option>
             </select>
-            <select name="" id="">
+            <select name="P1Q21Q2">
                 <option value="0">請選擇</option>
                 <option value="1">輕度</option>
                 <option value="2">中度</option>
@@ -74,36 +124,20 @@
                 <option value="4">超重度</option>
             </select>
             <br/>
-            <input type="checkbox">&nbsp;疾病11
-            <select name="" id="">
-                <option value="0">請選擇</option>
-                <option value="1">輕度</option>
-                <option value="2">中度</option>
-                <option value="3">重度</option>
-                <option value="4">超重度</option>
-            </select>
+
+            22.特殊疾病現況或應注意事項<br/>
+            <input type="text" name="P1Q22" placeholder="請描述">
             <br/>
-            <input type="checkbox">&nbsp;疾病12
-            <br/>
-            <input type="checkbox">&nbsp;疾病13<input type="text" style="display:none;">
-            <br/>
-            <input type="checkbox">&nbsp;疾病14<input type="text" style="display:none;">
-            <br/>
-            <input type="checkbox">&nbsp;疾病15<input type="text" style="display:none;">
-            <br/>
-            <input type="checkbox">&nbsp;疾病16<input type="text" style="display:none;">
-            <br/>
-            <input type="checkbox">&nbsp;疾病17<input type="text" style="display:none;">
-            <br/>
-            近視500度<br/>
-            <input type="radio" name="">&nbsp;是<br/>
-            <input type="radio" name="">&nbsp;否<br/>
-            <input type="radio" name="">&nbsp;不知道<br/>
-            是否有個人疾病<br/>
-            <input type="text">
-            是否有遺傳疾病
-            <input type="text" placeholder="親屬稱謂">
-            <input type="text" placeholder="疾病名稱">
+
+            23.家族疾病史<br/>
+            <input type="radio" name="P1Q23">無
+            <input type="radio" name="P1Q23">有
+                <div name="P1Q23group">
+                    <input type="text" name="P1Q23Text1" placeholder="親人稱謂">
+                    <input type="text" name="P1Q23Text2" placeholder="疾病名稱">
+                </div>
+                
+            <input type="radio" name="P1Q23">不知道
 
             
         </div>
@@ -111,11 +145,19 @@
         <div class="Part2">
             <h2>第二部分:生活問卷</h2>
 
-             問題一 吃早餐<br/>
-             <input type="radio" name="">&nbsp;不吃<br/>
-             <input type="radio" name="">&nbsp;偶爾吃<br/>
+            1. 過去 7 天內（不含假日），睡眠習慣：<br/>
+            <input type="radio" name="">&nbsp;每日睡足 7 小時<br/>
+            <input type="radio" name="">&nbsp;不足 7 小時<br/>
+            <input type="radio" name="">&nbsp;時常失眠<br/>
+
+
+            2. 過去 7 天內（不含假日），早餐習慣：<br/>
+             <input type="radio" name="">&nbsp;都不吃<br/>
+             <input type="radio" name="">&nbsp;有時吃<br/>
              <div>
+                吃了幾天?
                 <select name="" id="">
+                    <option value="0">請選擇天數</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -127,30 +169,78 @@
             <input type="radio" name="">&nbsp;每天吃<br/>
             <div>
                 <span>
-                    是否9點前吃
+                    9點前吃
                     <input type="radio" name="">&nbsp;是<br/>
                     <input type="radio" name="">&nbsp;否<br/>
                 </span>
             </div>
             <br/>
 
+            3. 過去7天內（不含假日），您進行中等強度以上(活動時仍可交談，但無法唱歌)的運動、健身、交通和休閒性身體活動，累積1天至少10分鐘有幾天：<br/>
+            <input type="radio" name="">&nbsp;0天<br/>
+            <input type="radio" name="">&nbsp;1天<br/>
+            <input type="radio" name="">&nbsp;2天<br/>
+            <input type="radio" name="">&nbsp;3天<br/>
+            <input type="radio" name="">&nbsp;4天<br/>
+            <input type="radio" name="">&nbsp;5天<br/>
+            <input type="radio" name="">&nbsp;6天<br/>
+            <input type="radio" name="">&nbsp;7天<br/>
 
-             問題二 菸品<br/>
-             <input type="radio" name="">&nbsp;選項一<br/>
-             <input type="radio" name="">&nbsp;選項二<br/>
+            4. 過去一個月內，吸菸行為：<br/>
+             <input type="radio" name="">&nbsp;不吸菸<br/>
+             <input type="radio" name="">&nbsp;時常吸菸<br/>
              <div>
-                <input type="checkbox">&nbsp;菸品1
-                <input type="checkbox">&nbsp;菸品2
-                <input type="checkbox">&nbsp;菸品3
+                <input type="checkbox">&nbsp;傳統菸品
+                <input type="checkbox">&nbsp;電子菸品
+                <input type="checkbox">&nbsp;加熱式菸品
              </div>
-             <input type="radio" name="">&nbsp;選項三<br/>
+             <input type="radio" name="">&nbsp;每天吸菸<br/>
+             <input type="radio" name="">&nbsp;已戒除<br/>
+
+             5. 過去一個月內，喝酒行為：<br/>
+             <input type="radio" name="">&nbsp;不喝酒<br/>
+             <input type="radio" name="">&nbsp;時常喝酒<br/>
+             <input type="radio" name="">&nbsp;每天喝酒<br/>
+             <div>
+                <input type="radio">&nbsp;2杯以上
+                <input type="radio">&nbsp;1杯
+                <input type="radio">&nbsp;不到1杯
+             </div>
+             <input type="radio" name="">&nbsp;已戒除<br/>
+
+             6. 過去一個月內，嚼檳榔：<br/>
+             <input type="radio" name="">&nbsp;不嚼檳榔<br/>
+             <input type="radio" name="">&nbsp;時常嚼檳榔<br/>
+             <input type="radio" name="">&nbsp;每天嚼檳榔<br/>
+             <input type="radio" name="">&nbsp;已戒除<br/>
+
+             7. 常覺得焦慮嗎？<br/>
+             <input type="radio" name="">&nbsp;沒有<br/>
+             <input type="radio" name="">&nbsp;有時<br/>
+             <input type="radio" name="">&nbsp;時常<br/>
+
+
+             8. 常覺得憂鬱嗎？<br/>
+             <input type="radio" name="">&nbsp;沒有<br/>
+             <input type="radio" name="">&nbsp;有時<br/>
+             <input type="radio" name="">&nbsp;時常<br/>
+
+             9. 過去 7 天內，你多久排便一次？<br/>
+             <input type="radio" name="">&nbsp;每天至少一次<br/>
+             <input type="radio" name="">&nbsp;兩天<br/>
+             <input type="radio" name="">&nbsp;三天<br/>
+             <input type="radio" name="">&nbsp;四天以上<br/>
+
+             
              
 
-             問題三 使用電腦的時間<br/>
-             <input type="radio" name="">&nbsp;選項一<br/>
-             <input type="radio" name="">&nbsp;選項二<br/>
-             <input type="radio" name="">&nbsp;選項三<br/>
+             10. 過去 7 天內（不含假日）每日除了上課及做功課需要之外，你累積網路使用的時間？<br/>
+             <input type="radio" name="">&nbsp;不到 2 小時<br/>
+             <input type="radio" name="">&nbsp;約 2 ~ 4 小時<br/>
+             <input type="radio" name="">&nbsp;約 4 小時或以上<br/>
+             小時:
              <select name="" id="">
+                <option value="0">請選擇時數</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
                 <option value="7">7</option>
@@ -174,59 +264,50 @@
             </select>
 
 
-             問題四<br/>
-             <input type="radio" name="">&nbsp;選項一<br/>
-             <input type="radio" name="">&nbsp;選項二<br/>
-             <input type="radio" name="">&nbsp;選項三<br/>
-             <input type="radio" name="">&nbsp;選項四<br/>
-             <input type="radio" name="">&nbsp;選項五<br/>
-             問題五<br/>
-             <input type="radio" name="">&nbsp;選項一<br/>
-             <input type="radio" name="">&nbsp;選項二<br/>
-             <input type="radio" name="">&nbsp;選項三<br/>
-             <input type="radio" name="">&nbsp;選項四<br/>
-             <input type="radio" name="">&nbsp;選項五<br/>
-             問題六<br/>
-             <input type="radio" name="">&nbsp;選項一<br/>
-             <input type="radio" name="">&nbsp;選項二<br/>
-             <input type="radio" name="">&nbsp;選項三<br/>
-             <input type="radio" name="">&nbsp;選項四<br/>
-             <input type="radio" name="">&nbsp;選項五<br/>
-             問題七<br/>
-             <input type="radio" name="">&nbsp;選項一<br/>
-             <input type="radio" name="">&nbsp;選項二<br/>
-             <input type="radio" name="">&nbsp;選項三<br/>
-             <input type="radio" name="">&nbsp;選項四<br/>
-             <input type="radio" name="">&nbsp;選項五<br/>
+             11. 你通常一天刷牙幾次?<br/>
+             <input type="radio" name="">&nbsp;0次<br/>
+             <input type="radio" name="">&nbsp;1次<br/>
+             <input type="radio" name="">&nbsp;2次<br/>
+             <input type="radio" name="">&nbsp;3次以上<br/>
+
+             12. 在沒有牙痛或其他口腔不舒服的情況下，你多久會做一次口腔檢查?<br/>
+             <input type="radio" name="">&nbsp;每半年一次<br/>
+             <input type="radio" name="">&nbsp;每年一次<br/>
+             <input type="radio" name="">&nbsp;一年以上<br/>
+             <input type="radio" name="">&nbsp;從來沒有<br/>
+             </br/>
+
+             13. 月經情況（限女性回答）:有無經痛?<br/>
+             <input type="radio" name="">&nbsp;沒有<br/>
+             <input type="radio" name="">&nbsp;輕微<br/>
+             <input type="radio" name="">&nbsp;嚴重<br/>
+             <input type="radio" name="">&nbsp;不知道/拒答<br/>
+             
              
         </div>
         <div class="Part3">
             <h2>第三部分:學校問卷</h2>
-             問題一<br/>
-             <input type="radio" name="Q3A1">&nbsp;選項一<br/>
-             <input type="radio" name="Q3A1">&nbsp;選項二<br/>
-             <input type="radio" name="Q3A1">&nbsp;選項三<br/>
-             <input type="radio" name="Q3A1">&nbsp;選項四<br/>
-             <input type="radio" name="Q3A1">&nbsp;選項五<br/>
-             問題二<br/>
-             <input type="radio" name="Q3A2">&nbsp;選項一<br/>
-             <input type="radio" name="Q3A2">&nbsp;選項二<br/>
-             <input type="radio" name="Q3A2">&nbsp;選項三<br/>
-             <input type="radio" name="Q3A2">&nbsp;選項四<br/>
-             <input type="radio" name="Q3A2">&nbsp;選項五<br/>
-             問題三<br/>
-             <input type="radio" name="Q3A3">&nbsp;選項一<br/>
-             <input type="radio" name="Q3A3">&nbsp;選項二<br/>
-             <input type="radio" name="Q3A3">&nbsp;選項三<br/>
-             <input type="radio" name="Q3A3">&nbsp;選項四<br/>
-             <input type="radio" name="Q3A3">&nbsp;選項五<br/>
+            1. 過去一個月，一般來說，您認為您目前的健康狀況是？<br/>
+             <input type="radio" name="Q3A1">&nbsp;非常好<br/>
+             <input type="radio" name="Q3A1">&nbsp;好<br/>
+             <input type="radio" name="Q3A1">&nbsp;一般<br/>
+             <input type="radio" name="Q3A1">&nbsp;不好<br/>
+             <input type="radio" name="Q3A1">&nbsp;非常不好<br/>
+             2. 過去一個月，一般來說，您認為您目前的心理狀況是？<br/>
+             <input type="radio" name="Q3A1">&nbsp;非常好<br/>
+             <input type="radio" name="Q3A1">&nbsp;好<br/>
+             <input type="radio" name="Q3A1">&nbsp;一般<br/>
+             <input type="radio" name="Q3A1">&nbsp;不好<br/>
+             <input type="radio" name="Q3A1">&nbsp;非常不好<br/>
+             3. 目前有無健康問題？<br/>
+             <input type="radio" name="Q3A3">&nbsp;無<br/>
+             <input type="radio" name="Q3A3">&nbsp;有<br/>
+             4. 請描述健康問題內容
              <textarea name="Q3A4" id="" cols="30" rows="10"></textarea><br/>
-             問題四<br/>
-             <input type="radio" name="Q3A5">&nbsp;選項一<br/>
-             <input type="radio" name="Q3A5">&nbsp;選項二<br/>
-             <input type="radio" name="Q3A5">&nbsp;選項三<br/>
-             <input type="radio" name="Q3A5">&nbsp;選項四<br/>
-             <input type="radio" name="Q3A5">&nbsp;選項五<br/>
+             5. 是否需要學校協助？<br/>
+             <input type="radio" name="Q3A5">&nbsp;否<br/>
+             <input type="radio" name="Q3A5">&nbsp;有<br/>
+             6. 請描述需要學校協助內容
              <textarea name="Q3A6" id="" cols="30" rows="10"></textarea><br/>
         </div>
     </form>
