@@ -18,8 +18,8 @@
         <div class="Part1">
             <h2>第一部分:健康問卷</h2>
             請勾選本人曾患過的疾病
-            <div>
-                <input type="checkbox" name="P1Q1" onchange="fun1();">&nbsp;1.無
+            <div name="PersonalHealthStates">
+                <input type="checkbox" name="P1Q1" onchange="hiddenCheckBoxDataGroup();">&nbsp;1.無
                 <input type="checkbox" name="P1Q2">&nbsp;2.肺結核
                 <input type="checkbox" name="P1Q3">&nbsp;3.心臟病
                 <br/>
@@ -35,11 +35,16 @@
                 <input type="checkbox" name="P1Q11">&nbsp;11.關節炎
                 <input type="checkbox" name="P1Q12">&nbsp;12.糖尿病
                 <br/>
-                <input type="checkbox" name="P1Q13">&nbsp;13.心理或精神疾病<br/>
-                <input type="text" placeholder="疾病名稱"><br/>
-                <input type="checkbox" name="P1Q14">&nbsp;14.癌症<br/>
-                <input type="text" placeholder="癌症名稱"><br/>
-                <input type="checkbox" name="P1Q15">&nbsp;15.海洋性貧血
+                <input type="checkbox" name="P1Q13" onchange="hiddenCheckBoxDataGroup('P1Q13');">&nbsp;13.心理或精神疾病<br/>
+                <div name="P1Q13group">
+                    <input type="text" placeholder="疾病名稱"><br/>
+                </div>
+                
+                <input type="checkbox" name="P1Q14" onchange="hiddenCheckBoxDataGroup('P1Q14');">&nbsp;14.癌症<br/>
+                <div name="P1Q14group">
+                    <input type="text" placeholder="癌症名稱"><br/>
+                </div>
+                <input type="checkbox" name="P1Q15" onchange="hiddenCheckBoxDataGroup('P1Q15');">&nbsp;15.海洋性貧血
                 <div name="P1Q15group">
                     <select name="P1Q15Select">
                         <option value="0">請選擇等級</option>
@@ -49,29 +54,31 @@
                     </select>
                 </div>
                 <br/>
-                <input type="checkbox" name="P1Q16">&nbsp;16.重大手術名稱<br/>
+                <input type="checkbox" name="P1Q16" onchange="hiddenCheckBoxDataGroup('P1Q16');">&nbsp;16.重大手術名稱<br/>
                 <div name="P1Q16group">
                     <input type="text" name="P1Q16Text" placeholder="重大手術名稱"><br/>
                 </div>
                 
-                <input type="checkbox" name="">&nbsp;17.過敏物質名稱<br/>
+                <input type="checkbox" name="P1Q17" onchange="hiddenCheckBoxDataGroup('P1Q17');">&nbsp;17.過敏物質名稱<br/>
                 <div name="P1Q17group">
                     <input type="text" placeholder="過敏物質名稱"><br/>
                 </div>
-                <input type="checkbox" name="">&nbsp;18.其他<br/>
+                <input type="checkbox" name="P1Q18" onchange="hiddenCheckBoxDataGroup('P1Q18');">&nbsp;18.其他<br/>
                 <div name="P1Q18group">
                     <input type="text" placeholder="請填寫"><br/>
                 </div>
             </div>
             
 
-            19.高度近視: 目前左右眼任一眼有沒有近視大於500度?
-            <input type="radio" name="P1Q19">無
-            <input type="radio" name="P1Q19">有
-            <input type="radio" name="P1Q19">不知道
+            19.高度近視: 目前左右眼任一眼有沒有近視大於500度?<br/>
+            <input type="radio" name="P1Q19">無<br/>
+            <input type="radio" name="P1Q19">有<br/>
+            <input type="radio" name="P1Q19">不知道<br/>
+            <br/>
 
-            <input type="checkbox">&nbsp;20.領有重大傷病證明卡
-                <select name="P1Q20">
+            <input type="checkbox" name="P1Q20" onchange="hiddenCheckBoxDataGroup('P1Q20');">&nbsp;20.領有重大傷病證明卡
+            <div name="P1Q20group">
+                <select>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -102,42 +109,47 @@
                     <option value="28">28</option>
                     <option value="29">29</option>
                 </select>
+            </div>
+                
             <br/>
 
-            <input type="checkbox">&nbsp;21.領有身心障礙手冊<br/>
-            <select name="P1Q21Q1">
-                <option value="0">請選擇</option>
-                <option value="1">第一類</option>
-                <option value="2">第二類</option>
-                <option value="3">第三類</option>
-                <option value="4">第四類</option>
-                <option value="5">第五類</option>
-                <option value="6">第六類</option>
-                <option value="7">第七類</option>
-                <option value="8">第八類</option>
-            </select>
-            <select name="P1Q21Q2">
-                <option value="0">請選擇</option>
-                <option value="1">輕度</option>
-                <option value="2">中度</option>
-                <option value="3">重度</option>
-                <option value="4">超重度</option>
-            </select>
+            <input type="checkbox" name="P1Q21" onchange="hiddenCheckBoxDataGroup('P1Q21');">&nbsp;21.領有身心障礙手冊
+            <div name="P1Q21group">
+                <select name="P1Q21Q1">
+                    <option value="0">請選擇</option>
+                    <option value="1">第一類</option>
+                    <option value="2">第二類</option>
+                    <option value="3">第三類</option>
+                    <option value="4">第四類</option>
+                    <option value="5">第五類</option>
+                    <option value="6">第六類</option>
+                    <option value="7">第七類</option>
+                    <option value="8">第八類</option>
+                </select>
+                <select name="P1Q21Q2">
+                    <option value="0">請選擇</option>
+                    <option value="1">輕度</option>
+                    <option value="2">中度</option>
+                    <option value="3">重度</option>
+                    <option value="4">超重度</option>
+                </select>
+            </div>
             <br/>
 
-            22.特殊疾病現況或應注意事項<br/>
-            <input type="text" name="P1Q22" placeholder="請描述">
+            <input type="checkbox" name="P1Q22" onchange="hiddenCheckBoxDataGroup('P1Q22');">&nbsp;22.特殊疾病現況或應注意事項<br/>
+            <div name="P1Q22group">
+                <input type="text" name="P1Q22" placeholder="請描述">
+            </div>
             <br/>
 
             23.家族疾病史<br/>
-            <input type="radio" name="P1Q23">無
-            <input type="radio" name="P1Q23">有
+            <input type="radio"  name="P1Q23" value ='0' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">無<br/>
+            <input type="radio"  name="P1Q23" value ='1' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">有<br/>
                 <div name="P1Q23group">
-                    <input type="text" name="P1Q23Text1" placeholder="親人稱謂">
-                    <input type="text" name="P1Q23Text2" placeholder="疾病名稱">
+                    <input type="text" name="P1Q23Text1" placeholder="親人稱謂"><br/>
+                    <input type="text" name="P1Q23Text2" placeholder="疾病名稱"><br/>
                 </div>
-                
-            <input type="radio" name="P1Q23">不知道
+            <input type="radio"  name="P1Q23" value = '2' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">不知道<br/>
 
             
         </div>
@@ -315,9 +327,65 @@
 </html>
 <script>
 
-    let PartCheckBoxes = document.querySelector('Q1');
+    GroupHide();
 
-    function fun1(){
-       let checkboxes = document.getElementById
+    function GroupHide(){
+        let groups = document.querySelectorAll('[name*="group"]');
+
+        for(let i=0; i < groups.length ; i++){
+            groups[i].style.display = 'none';
+        }
     }
+
+
+    function DisableHealthStatesCheckbox(){
+        
+       let checkboxes = document.querySelectorAll("div[name='PersonalHealthStates'] > input[type='checkbox']");
+       let q1 = document.querySelector("div[name='PersonalHealthStates'] > input[name='P1Q1']");
+
+       if(q1.checked == true){
+
+            for(let i = 0; i < checkboxes.length; i++){
+                checkboxes[i].disabled = true;
+                checkboxes[i].checked = false;
+            }
+
+            q1.checked = true;
+            q1.disabled = false;
+
+            GroupHide();
+
+       }else{
+
+            for(let i = 0; i < checkboxes.length; i++){
+                checkboxes[i].disabled = false;
+            }
+       }
+
+    }
+
+    function hiddenCheckBoxDataGroup(DataName){
+        let Data = document.querySelector("input[name=" + DataName + "]");
+        let DataGroup = document.querySelector("[name=" + DataName + "group]");
+
+        if(Data.checked == true){
+            DataGroup.style.display = 'block';
+        }else{
+            DataGroup.style.display = 'none';
+        }
+
+    }
+
+    function hiddenRadioButtonGroup(DataName, CheckValueArray){
+        let  Data = document.querySelectorAll("input[name=" + DataName + "]");
+
+        for(let i = 0; i < Data.length; i++){
+            if( CheckValueArray.includes(Data[i].value)){
+                console.log('啵啵');
+            }
+        }
+    }
+
+    
+
 </script>
