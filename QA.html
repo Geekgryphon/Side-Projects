@@ -9,7 +9,7 @@
     <form method="post" action="">
 
         性別:
-        <select name="sex" id="">
+        <select name="sex" id="" onclick="hideSexQuestion();">
             <option value="m">男</option>
             <option value="f">女</option>
         </select>
@@ -19,7 +19,7 @@
             <h2>第一部分:健康問卷</h2>
             請勾選本人曾患過的疾病
             <div name="PersonalHealthStates">
-                <input type="checkbox" name="P1Q1" onchange="hiddenCheckBoxDataGroup();">&nbsp;1.無
+                <input type="checkbox" name="P1Q1" onchange="DisableHealthStatesCheckbox();">&nbsp;1.無
                 <input type="checkbox" name="P1Q2">&nbsp;2.肺結核
                 <input type="checkbox" name="P1Q3">&nbsp;3.心臟病
                 <br/>
@@ -37,12 +37,12 @@
                 <br/>
                 <input type="checkbox" name="P1Q13" onchange="hiddenCheckBoxDataGroup('P1Q13');">&nbsp;13.心理或精神疾病<br/>
                 <div name="P1Q13group">
-                    <input type="text" placeholder="疾病名稱"><br/>
+                    <input type="text" placeholder="疾病名稱">
                 </div>
                 
                 <input type="checkbox" name="P1Q14" onchange="hiddenCheckBoxDataGroup('P1Q14');">&nbsp;14.癌症<br/>
                 <div name="P1Q14group">
-                    <input type="text" placeholder="癌症名稱"><br/>
+                    <input type="text" placeholder="癌症名稱">
                 </div>
                 <input type="checkbox" name="P1Q15" onchange="hiddenCheckBoxDataGroup('P1Q15');">&nbsp;15.海洋性貧血
                 <div name="P1Q15group">
@@ -56,16 +56,16 @@
                 <br/>
                 <input type="checkbox" name="P1Q16" onchange="hiddenCheckBoxDataGroup('P1Q16');">&nbsp;16.重大手術名稱<br/>
                 <div name="P1Q16group">
-                    <input type="text" name="P1Q16Text" placeholder="重大手術名稱"><br/>
+                    <input type="text" name="P1Q16Text" placeholder="重大手術名稱">
                 </div>
                 
                 <input type="checkbox" name="P1Q17" onchange="hiddenCheckBoxDataGroup('P1Q17');">&nbsp;17.過敏物質名稱<br/>
                 <div name="P1Q17group">
-                    <input type="text" placeholder="過敏物質名稱"><br/>
+                    <input type="text" placeholder="過敏物質名稱">
                 </div>
                 <input type="checkbox" name="P1Q18" onchange="hiddenCheckBoxDataGroup('P1Q18');">&nbsp;18.其他<br/>
                 <div name="P1Q18group">
-                    <input type="text" placeholder="請填寫"><br/>
+                    <input type="text" placeholder="請填寫">
                 </div>
             </div>
             
@@ -143,13 +143,13 @@
             <br/>
 
             23.家族疾病史<br/>
-            <input type="radio"  name="P1Q23" value ='0' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">無<br/>
-            <input type="radio"  name="P1Q23" value ='1' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">有<br/>
+            <input type="radio"  name="P1Q23" id="P1Q23S1" value ='0' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">無<br/>
+            <input type="radio"  name="P1Q23" id="P1Q23S2" value ='1' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">有<br/>
                 <div name="P1Q23group">
                     <input type="text" name="P1Q23Text1" placeholder="親人稱謂"><br/>
                     <input type="text" name="P1Q23Text2" placeholder="疾病名稱"><br/>
                 </div>
-            <input type="radio"  name="P1Q23" value = '2' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">不知道<br/>
+            <input type="radio"  name="P1Q23" id="P1Q23S3" value = '2' onchange="hiddenRadioButtonGroup('P1Q23','[1]');">不知道<br/>
 
             
         </div>
@@ -158,15 +158,15 @@
             <h2>第二部分:生活問卷</h2>
 
             1. 過去 7 天內（不含假日），睡眠習慣：<br/>
-            <input type="radio" name="">&nbsp;每日睡足 7 小時<br/>
-            <input type="radio" name="">&nbsp;不足 7 小時<br/>
-            <input type="radio" name="">&nbsp;時常失眠<br/>
+            <input type="radio" name="P2Q1">&nbsp;每日睡足 7 小時<br/>
+            <input type="radio" name="P2Q1">&nbsp;不足 7 小時<br/>
+            <input type="radio" name="P2Q1">&nbsp;時常失眠<br/>
 
 
             2. 過去 7 天內（不含假日），早餐習慣：<br/>
-             <input type="radio" name="">&nbsp;都不吃<br/>
-             <input type="radio" name="">&nbsp;有時吃<br/>
-             <div>
+             <input type="radio" name="P2Q2" value="1">&nbsp;都不吃<br/>
+             <input type="radio" name="P2Q2" value="2">&nbsp;有時吃<br/>
+             <div name="P2Q2group" onclick="">
                 吃了幾天?
                 <select name="" id="">
                     <option value="0">請選擇天數</option>
@@ -178,11 +178,11 @@
                     <option value="6">6</option>
                 </select>
              </div>
-            <input type="radio" name="">&nbsp;每天吃<br/>
+            <input type="radio" name="P2Q2" value="3">&nbsp;每天吃<br/>
             <div>
                 <span>
                     9點前吃
-                    <input type="radio" name="">&nbsp;是<br/>
+                    <input type="radio" name="">&nbsp;是
                     <input type="radio" name="">&nbsp;否<br/>
                 </span>
             </div>
@@ -199,81 +199,83 @@
             <input type="radio" name="">&nbsp;7天<br/>
 
             4. 過去一個月內，吸菸行為：<br/>
-             <input type="radio" name="">&nbsp;不吸菸<br/>
-             <input type="radio" name="">&nbsp;時常吸菸<br/>
-             <div>
+             <input type="radio" name="P2Q4" value="0" onclick="hiddenRadioButtonGroup('P2Q4','[1,2]');">&nbsp;不吸菸<br/>
+             <input type="radio" name="P2Q4" value="1" onclick="hiddenRadioButtonGroup('P2Q4','[1,2]');">&nbsp;時常吸菸<br/>
+             <div name="P2Q4group">
                 <input type="checkbox">&nbsp;傳統菸品
                 <input type="checkbox">&nbsp;電子菸品
                 <input type="checkbox">&nbsp;加熱式菸品
              </div>
-             <input type="radio" name="">&nbsp;每天吸菸<br/>
-             <input type="radio" name="">&nbsp;已戒除<br/>
+             <input type="radio" name="P2Q4" value="2" onclick="hiddenRadioButtonGroup('P2Q4','[1,2]');">&nbsp;每天吸菸<br/>
+             <input type="radio" name="P2Q4" value="3" onclick="hiddenRadioButtonGroup('P2Q4','[1,2]');">&nbsp;已戒除<br/>
 
              5. 過去一個月內，喝酒行為：<br/>
-             <input type="radio" name="">&nbsp;不喝酒<br/>
-             <input type="radio" name="">&nbsp;時常喝酒<br/>
-             <input type="radio" name="">&nbsp;每天喝酒<br/>
-             <div>
+             <input type="radio" name="P2Q5" value="0" onclick="hiddenRadioButtonGroup('P2Q5','[1,2]');">&nbsp;不喝酒<br/>
+             <input type="radio" name="P2Q5" value="1" onclick="hiddenRadioButtonGroup('P2Q5','[1,2]');">&nbsp;時常喝酒<br/>
+             <input type="radio" name="P2Q5" value="2" onclick="hiddenRadioButtonGroup('P2Q5','[1,2]');">&nbsp;每天喝酒<br/>
+             <div name="P2Q5group">
                 <input type="radio">&nbsp;2杯以上
                 <input type="radio">&nbsp;1杯
                 <input type="radio">&nbsp;不到1杯
              </div>
-             <input type="radio" name="">&nbsp;已戒除<br/>
+             <input type="radio" name="P2Q5" value="3" onclick="hiddenRadioButtonGroup('P2Q5','[1,2]');">&nbsp;已戒除<br/>
 
              6. 過去一個月內，嚼檳榔：<br/>
-             <input type="radio" name="">&nbsp;不嚼檳榔<br/>
-             <input type="radio" name="">&nbsp;時常嚼檳榔<br/>
-             <input type="radio" name="">&nbsp;每天嚼檳榔<br/>
-             <input type="radio" name="">&nbsp;已戒除<br/>
+             <input type="radio" name="P2Q6">&nbsp;不嚼檳榔<br/>
+             <input type="radio" name="P2Q6">&nbsp;時常嚼檳榔<br/>
+             <input type="radio" name="P2Q6">&nbsp;每天嚼檳榔<br/>
+             <input type="radio" name="P2Q6">&nbsp;已戒除<br/>
 
              7. 常覺得焦慮嗎？<br/>
-             <input type="radio" name="">&nbsp;沒有<br/>
-             <input type="radio" name="">&nbsp;有時<br/>
-             <input type="radio" name="">&nbsp;時常<br/>
+             <input type="radio" name="P2Q7">&nbsp;沒有<br/>
+             <input type="radio" name="P2Q7">&nbsp;有時<br/>
+             <input type="radio" name="P2Q7">&nbsp;時常<br/>
 
 
              8. 常覺得憂鬱嗎？<br/>
-             <input type="radio" name="">&nbsp;沒有<br/>
-             <input type="radio" name="">&nbsp;有時<br/>
-             <input type="radio" name="">&nbsp;時常<br/>
+             <input type="radio" name="P2Q8">&nbsp;沒有<br/>
+             <input type="radio" name="P2Q8">&nbsp;有時<br/>
+             <input type="radio" name="P2Q8">&nbsp;時常<br/>
 
              9. 過去 7 天內，你多久排便一次？<br/>
-             <input type="radio" name="">&nbsp;每天至少一次<br/>
-             <input type="radio" name="">&nbsp;兩天<br/>
-             <input type="radio" name="">&nbsp;三天<br/>
-             <input type="radio" name="">&nbsp;四天以上<br/>
+             <input type="radio" name="P2Q9">&nbsp;每天至少一次<br/>
+             <input type="radio" name="P2Q9">&nbsp;兩天<br/>
+             <input type="radio" name="P2Q9">&nbsp;三天<br/>
+             <input type="radio" name="P2Q9">&nbsp;四天以上<br/>
 
              
              
-
              10. 過去 7 天內（不含假日）每日除了上課及做功課需要之外，你累積網路使用的時間？<br/>
-             <input type="radio" name="">&nbsp;不到 2 小時<br/>
-             <input type="radio" name="">&nbsp;約 2 ~ 4 小時<br/>
-             <input type="radio" name="">&nbsp;約 4 小時或以上<br/>
+             <input type="radio" name="P2Q10" value="0" onclick="hiddenRadioButtonGroup('P2Q10','[2]');">&nbsp;不到 2 小時<br/>
+             <input type="radio" name="P2Q10" value="1" onclick="hiddenRadioButtonGroup('P2Q10','[2]');">&nbsp;約 2 ~ 4 小時<br/>
+             <input type="radio" name="P2Q10" value="2" onclick="hiddenRadioButtonGroup('P2Q10','[2]');">&nbsp;約 4 小時或以上<br/>
              小時:
-             <select name="" id="">
-                <option value="0">請選擇時數</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-            </select>
+             <div name="P2Q10group">
+                <select name="" id="">
+                    <option value="0">請選擇時數</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                </select>
+             </div>
+             
 
 
              11. 你通常一天刷牙幾次?<br/>
@@ -289,11 +291,14 @@
              <input type="radio" name="">&nbsp;從來沒有<br/>
              </br/>
 
-             13. 月經情況（限女性回答）:有無經痛?<br/>
-             <input type="radio" name="">&nbsp;沒有<br/>
-             <input type="radio" name="">&nbsp;輕微<br/>
-             <input type="radio" name="">&nbsp;嚴重<br/>
-             <input type="radio" name="">&nbsp;不知道/拒答<br/>
+             <div name="P2Q13group">
+                13. 月經情況（限女性回答）:有無經痛?<br/>
+                <input type="radio" name="">&nbsp;沒有<br/>
+                <input type="radio" name="">&nbsp;輕微<br/>
+                <input type="radio" name="">&nbsp;嚴重<br/>
+                <input type="radio" name="">&nbsp;不知道/拒答<br/>
+             </div>
+             
              
              
         </div>
@@ -328,12 +333,24 @@
 <script>
 
     GroupHide();
+    hideSexQuestion();
 
     function GroupHide(){
         let groups = document.querySelectorAll('[name*="group"]');
 
         for(let i=0; i < groups.length ; i++){
             groups[i].style.display = 'none';
+        }
+    }
+
+    function hideSexQuestion(){
+        let sex = document.querySelector("[name=sex]").value;
+        let question = document.querySelector("[name=P2Q13group]");
+
+        if(sex == 'm'){
+            question.style.display = 'none';
+        }else{
+            question.style.display = 'block';
         }
     }
 
@@ -378,11 +395,20 @@
 
     function hiddenRadioButtonGroup(DataName, CheckValueArray){
         let  Data = document.querySelectorAll("input[name=" + DataName + "]");
+        let DataGroup = document.querySelector("[name=" + DataName + "group]");
+        let result = false;
 
         for(let i = 0; i < Data.length; i++){
-            if( CheckValueArray.includes(Data[i].value)){
-                console.log('啵啵');
+           
+            if( Data[i].checked && CheckValueArray.includes(Data[i].value)){
+                result = true;
             }
+        }
+
+        if(result){
+            DataGroup.style.display = 'block';
+        }else{
+            DataGroup.style.display = 'none';
         }
     }
 
