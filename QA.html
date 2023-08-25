@@ -166,7 +166,7 @@
             2. 過去 7 天內（不含假日），早餐習慣：<br/>
              <input type="radio" name="P2Q2" value="1">&nbsp;都不吃<br/>
              <input type="radio" name="P2Q2" value="2">&nbsp;有時吃<br/>
-             <div name="P2Q2group" onclick="">
+             <div name="P2Q2group">
                 吃了幾天?
                 <select name="" id="">
                     <option value="0">請選擇天數</option>
@@ -279,24 +279,24 @@
 
 
              11. 你通常一天刷牙幾次?<br/>
-             <input type="radio" name="">&nbsp;0次<br/>
-             <input type="radio" name="">&nbsp;1次<br/>
-             <input type="radio" name="">&nbsp;2次<br/>
-             <input type="radio" name="">&nbsp;3次以上<br/>
+             <input type="radio" name="P2Q11">&nbsp;0次<br/>
+             <input type="radio" name="P2Q11">&nbsp;1次<br/>
+             <input type="radio" name="P2Q11">&nbsp;2次<br/>
+             <input type="radio" name="P2Q11">&nbsp;3次以上<br/>
 
              12. 在沒有牙痛或其他口腔不舒服的情況下，你多久會做一次口腔檢查?<br/>
-             <input type="radio" name="">&nbsp;每半年一次<br/>
-             <input type="radio" name="">&nbsp;每年一次<br/>
-             <input type="radio" name="">&nbsp;一年以上<br/>
-             <input type="radio" name="">&nbsp;從來沒有<br/>
+             <input type="radio" name="P2Q12">&nbsp;每半年一次<br/>
+             <input type="radio" name="P2Q12">&nbsp;每年一次<br/>
+             <input type="radio" name="P2Q12">&nbsp;一年以上<br/>
+             <input type="radio" name="P2Q12">&nbsp;從來沒有<br/>
              </br/>
 
              <div name="P2Q13group">
                 13. 月經情況（限女性回答）:有無經痛?<br/>
-                <input type="radio" name="">&nbsp;沒有<br/>
-                <input type="radio" name="">&nbsp;輕微<br/>
-                <input type="radio" name="">&nbsp;嚴重<br/>
-                <input type="radio" name="">&nbsp;不知道/拒答<br/>
+                <input type="radio" name="P2Q13">&nbsp;沒有<br/>
+                <input type="radio" name="P2Q13">&nbsp;輕微<br/>
+                <input type="radio" name="P2Q13">&nbsp;嚴重<br/>
+                <input type="radio" name="P2Q13">&nbsp;不知道/拒答<br/>
              </div>
              
              
@@ -327,6 +327,9 @@
              6. 請描述需要學校協助內容
              <textarea name="Q3A6" id="" cols="30" rows="10"></textarea><br/>
         </div>
+        <br/>
+
+        <input type="button" name="" value="送出" onclick="checkValue();">
     </form>
 </body>
 </html>
@@ -334,6 +337,15 @@
 
     GroupHide();
     hideSexQuestion();
+
+    function checkValue(){
+        let form = document.querySelector("form");
+        let result = false;
+
+        if(result){
+            form.submit();
+        }
+    }
 
     function GroupHide(){
         let groups = document.querySelectorAll('[name*="group"]');
